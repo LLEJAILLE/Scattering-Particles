@@ -103,22 +103,6 @@ hyperparameters = {"g": g, "m": m, "v0": v0, "R": R}
 results.plot_trajectories(particles, b_values, hyperparameters)
 ```
 
-### Animation with Velocity Vectors
-
-```python
-# After running simulation...
-results.animate(
-    particles,
-    b_values=b_values,
-    interval_ms=40,              # 40ms per frame
-    show_velocity=True,          # Show velocity arrows
-    vel_scale=0.5,               # Scale factor for velocity vectors
-    show_background_trajectories=True,  # Show full paths
-    trajectories_path="trajectories.png",  # Save static figure
-    save_path="animation.gif"    # Save animation as GIF
-)
-```
-
 ## Physics Background
 
 ### Reduced Units
@@ -150,17 +134,6 @@ The integrator tracks:
 
 ### Adding New Potentials
 
-Create a new class inheriting from `Potential`:
-
-```python
-class HarmonicPotential(Potential):
-    def __init__(self, k: float):
-        self.k = k
-    
-    def force(self, r: np.ndarray) -> np.ndarray:
-        return -self.k * r  # Hooke's law
-```
-
 ### Adjusting Time Step
 
 Smaller time steps improve accuracy but increase computation time:
@@ -186,10 +159,7 @@ cmap = plt.get_cmap("viridis")  # Or: "plasma", "inferno", "coolwarm"
 - Colorbar showing impact parameter scale
 - Hyperparameters displayed in title
 
-### Animation
-- Real-time particle motion overlaid on full trajectories
-- Optional velocity vectors showing instantaneous direction
-- Exportable to GIF, MP4, or other formats
+![alt text]("./exemple_output.png")
 
 ## Notes
 
