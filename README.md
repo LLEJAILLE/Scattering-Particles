@@ -159,7 +159,7 @@ cmap = plt.get_cmap("viridis")  # Or: "plasma", "inferno", "coolwarm"
 - Colorbar showing impact parameter scale
 - Hyperparameters displayed in title
 
-![alt text]("./exemple_output.png")
+![alt text]("exemple_output.png")
 
 ## Notes
 
