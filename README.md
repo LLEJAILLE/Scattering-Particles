@@ -159,14 +159,12 @@ cmap = plt.get_cmap("viridis")  # Or: "plasma", "inferno", "coolwarm"
 - Colorbar showing impact parameter scale
 - Hyperparameters displayed in title
 
-![alt text]("/output/exemple_output.png")
+![Example Output](output/exemple_output.png)
 
 ## Notes
 
 - Numerical values have no SI unit significance
 - Dynamics are governed by dimensionless ratios
-- The Euler integration method is simple but may accumulate error for long simulations
-- For better accuracy, consider implementing RK4 or symplectic integrators
 
 ## License
 
@@ -174,13 +172,4 @@ MIT License - feel free to use and modify for educational or research purposes.
 
 ## Author
 
-Louis - Classical mechanics simulation framework
-
-## Contributing
-
-Contributions welcome! Potential improvements:
-- Implement higher-order integrators (RK4, Verlet)
-- Add 3D scattering visualization
-- Include quantum scattering cross-sections for comparison
-- Support for multiple scattering centers
-- Parameter sweep and phase space analysis tools
+Louis Lejaille - Classical mechanics simulation framework
