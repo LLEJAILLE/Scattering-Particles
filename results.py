@@ -23,7 +23,7 @@ class Results:
                 linewidth=0.9
             )
 
-        plt.scatter(0, 0, color="black", s=40, zorder=5)
+        plt.scatter(0, 0, color="black", s=50, zorder=5)
 
         plt.axhline(0, color="black", linewidth=0.8)
         plt.axvline(0, color="black", linewidth=0.8)
@@ -37,7 +37,6 @@ class Results:
             f"v0={hyperparameters['v0']}, R={hyperparameters['R']}"
         )
         plt.title(title_text)
-        plt.grid(False)
 
         sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
         sm.set_array([])
