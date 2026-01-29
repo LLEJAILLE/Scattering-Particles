@@ -123,13 +123,6 @@ $$\mathbf{F}(\mathbf{r}) = -\frac{g \mathbf{r}}{|\mathbf{r}|^3}$$
 
 This produces repulsive (g > 0) or attractive (g < 0) interactions.
 
-### Conservation Laws
-
-The integrator tracks:
-- **Angular momentum**: L = |r × mv|
-- **Effective potential**: V_eff = L²/(2mr²) + g/r
-- **Total energy**: E = ½mv² + V_eff
-
 ## Customization
 
 ### Adding New Potentials
@@ -171,5 +164,6 @@ cmap = plt.get_cmap("viridis")  # Or: "plasma", "inferno", "coolwarm"
 MIT License - feel free to use and modify for educational or research purposes.
 
 ## Author
+
 
 Louis Lejaille - Classical mechanics simulation framework
