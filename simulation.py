@@ -32,15 +32,50 @@ class Simulation:
         plt.figure(figsize=(8, 6))
         plt.plot(b_value, thetas, 'o-')
         plt.title('Scattering Angles θ for Different Impact Parameters b')
-        plt.xlabel('Index of Impact Parameter b')
+        plt.xlabel('Impact Parameter b')
         plt.ylabel('Scattering Angle θ (radians)')
         plt.axhline(0, color='black', lw=0.5, ls='--')
-        plt.grid()
+        plt.show()
+
+    def validateModel(self, b_value, g, m, v0):
+        E = 1/2 * m * v0**2
+
+        thetas = []
+        for p in self.particles:
+            v = p.velocity
+            theta = np.arctan2(v[1], v[0])
+            thetas.append(theta)
+        self.theta = thetas
+
+        theta_th = []
+        for b in b_value:
+            theta = 2 * np.arctan(g / (2 * E * b))
+            theta_th.append(theta)
+
+        theta_num_abs = np.abs(thetas)
+        theta_th_abs  = np.abs(theta_th)
+
+        plt.figure(figsize=(6, 6))
+
+        plt.scatter(theta_th_abs, theta_num_abs, label="Résultats numériques")
+
+        theta_min = min(theta_th_abs)
+        theta_max = max(theta_th_abs)
+        plt.plot([theta_min, theta_max],
+                [theta_min, theta_max],
+                linestyle="--",
+                label=r"$\theta_{\mathrm{num}} = \theta_{\mathrm{th}}$")
+
+        plt.xlabel(r"$\theta_{\mathrm{th}}$ (rad)")
+        plt.ylabel(r"$\theta_{\mathrm{num}}$ (rad)")
+        plt.legend()
+        plt.grid(True)
         plt.show()
 
 
 
 def main():
+
     g = -1.0
     m = 1.0
     v0 = 1.0
@@ -81,9 +116,9 @@ def main():
     simulation.visualize_theta_angle(b_value)
     
     results = Results()
-    # results.plot_trajectories(particles, b_value, hyperparameters)
+    results.plot_trajectories(particles, b_value, hyperparameters)
 
-    # potential.potential_graph()
+    simulation.validateModel(b_value, g, m, v0)
 
 if __name__ == "__main__":
     main()

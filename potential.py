@@ -16,7 +16,7 @@ class CoulombPotential(Potential):
         return - (self.g / norm_r**3) * r
     
     def potential_graph(self):
-        q = self.g
+        q = 5.0
         epsilon_0 = 1
         r = np.linspace(0.02, 0.5, 400)
         V_r = q / (4 * np.pi * epsilon_0 * r)
